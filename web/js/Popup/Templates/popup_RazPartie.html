@@ -1,0 +1,14 @@
+﻿    <div class="modal-header">
+          <b>Nouvelle Partie</b>
+    </div>
+    <div class="modal-body">
+        <div>Confirmez-vous le démarrage d'une nouvelle partie ?</div>
+        <div>
+            <check val="option.flagJoueur" texte="Conserver les joueurs" css-check="checkBoxCase" css-texte="checkboxTexte"></check>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="nom == ''" class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Annul</button>
+    </div>

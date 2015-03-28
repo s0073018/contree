@@ -1,0 +1,1636 @@
+﻿html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bk_wood.jpg);
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.fond.tapis {
+    border: solid 1px black;
+    background-image: url(../img/bk_tapis.jpg);
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.fond.stat {
+    border: solid 1px black;
+    /*background-color: #8aa743;*/
+    background: -webkit-linear-gradient(#999999,#BBBBBB); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#999999,#BBBBBB); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#999999,#BBBBBB); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#999999,#BBBBBB); /* Standard syntax */
+}
+
+.fond.param {
+    border: solid 1px black;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:15px;
+    padding-right:30px;
+    /*background-color: #8aa743;*/
+    background: -webkit-linear-gradient(#999999,#BBBBBB); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#999999,#BBBBBB); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#999999,#BBBBBB); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#999999,#BBBBBB); /* Standard syntax */
+}
+
+/**********************************/
+/*             PARAM              */
+/**********************************/
+
+.paragraphe-param {
+    height:80vh;
+    overflow:auto;
+}
+
+/**********************************/
+/*             SCORE TEMPO        */
+/**********************************/
+
+@media all and (orientation:landscape) {
+
+    .partie-equipe-tempo {
+        display: inline-block;
+        width: 45vw;
+        vertical-align: top;
+        text-align: center;
+        padding-bottom: 10px;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        border: solid 1px black;
+        text-align: center;
+    }
+
+    .nom-equipe-tempo {
+        color: black;
+        text-decoration: none;
+        text-transform: capitalize;
+        vertical-align: top;
+        font-size: 9vh;
+        font-weight: bold;
+    }
+    
+    .cell-score-tempo {
+        display: inline-block;
+        width: 45vw;
+    }
+
+    .cell-ecart-tempo {
+        display: inline-block;
+        width: 45vw;
+    }
+
+    .points-equipe-tempo {
+        font-size: 20vh;
+        font-weight: bold;
+        color: black;
+        line-height: 23vh;
+    }
+}
+
+@media all and (orientation:portrait) {
+
+    .partie-equipe-tempo {
+        display: inline-block;
+        width: 40vw;
+        vertical-align: top;
+        text-align: center;
+        padding-bottom: 10px;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        border: solid 1px black;
+    }
+
+    .nom-equipe-tempo {
+        color: black;
+        text-decoration: none;
+        text-transform: capitalize;
+        vertical-align: top;
+        font-size: 5vw;
+    }
+
+    .cell-score-tempo {
+        display: inline-block;
+        width: 40vw;
+    }
+
+    .cell-ecart-tempo {
+        display: inline-block;
+        width: 40vw;
+    }
+
+    .points-equipe-tempo {
+        font-size: 10vw;
+        font-weight: bold;
+        color: black;
+        line-height: 13vw;
+    }
+
+   
+}
+
+.panel-score-tempo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 100vh;
+    right: 100vw;
+    /*border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;*/
+    
+    border: solid 1px black;
+    opacity: 0;
+    background: -webkit-linear-gradient(#999999,#FFFFFF); 
+    background: -o-linear-gradient(#999999,#FFFFFF); 
+    background: -moz-linear-gradient(#999999,#FFFFFF); 
+    background: linear-gradient(#999999,#FFFFFF);
+    z-index: 10000;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    overflow-y: auto;
+    padding:15px;
+}
+
+.score-tempo{
+    -webkit-animation: alt-score 8s infinite;
+        -moz-animation: alt-score 8s infinite;
+        -o-animation: alt-score 8s infinite;
+        animation: alt-score 8s infinite;
+       
+}
+
+/**********************************/
+/*             AIDE               */
+/**********************************/
+
+.panel-aide {
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    bottom: 95vh;
+    right: 95vw;
+    border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+    border: solid 1px black;
+    opacity: 0;
+    background-color: #dddbdb;
+    z-index: 9999;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    overflow-y: auto;
+    padding:15px;
+}
+
+.aide-titre {
+    padding: 4px;
+    font-size: 6vh;
+    display: inline-block;
+    color: black;
+    text-align: left;
+    font-weight: bold;
+}
+
+.aide-sous-titre {
+    border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -webkit-border-radius: 2vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 4px;
+    background: -webkit-linear-gradient(#00AA00,#cccccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#00AA00, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#00AA00, #cccccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#00AA00, #cccccc); /* Standard syntax */
+    font-size: 5vh;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 100%;
+}
+
+.aide-elem{
+    padding-left:10px;
+    padding-top:4px;
+    padding-bottom:4px;
+    clear: both;
+}
+
+.aide-elem-float-left{
+    float:left;
+    margin-right:4px;
+}
+
+.aide-elem-float-right{
+    float:right;
+    margin-left:4px;
+}
+
+.aide-elem-clear {
+    clear: both;
+}
+
+@media all and (orientation:landscape) {
+    .aide {
+        position: absolute;
+        top: 1vh;
+        right: 1vh;
+        z-index: 10000;
+    }
+
+        .aide span {
+            font-size: 6vh;
+            color: blue;
+            background-color: white;
+        }
+
+    .fond {
+        position: absolute;
+        top: 5vh;
+        left: 20vh;
+        bottom: 5vh;
+        right: 5vh;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+    }
+}
+
+@media all and (orientation:portrait) {
+    .aide {
+        position: absolute;
+        top: 1vw;
+        right: 1vw;
+        z-index: 10000;
+    }
+
+        .aide span {
+            font-size: 6vw;
+            color: blue;
+            background-color: white;
+        }
+
+    .fond {
+        position: absolute;
+        top: 5vw;
+        left: 20vw;
+        bottom: 5vw;
+        right: 5vw;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+                
+
+    }
+}
+
+/*******************************/
+/*          STAT               */
+/*******************************/
+
+.graphe {
+}
+
+.ac-title {
+    color: black;
+    text-align: center;
+}
+
+
+@media all and (orientation:landscape) {
+
+    .chart-bar {
+        width: 100%;
+    }
+
+        .chart-bar .graphe {
+            height: 70vh;
+        }
+
+    .chart-pie {
+        display: inline-block;
+        width: 48%;
+    }
+
+        .chart-pie .graphe {
+            height: 65vh;
+        }
+
+    .chart-legend {
+        clear: both;
+    }
+
+        .chart-legend li {
+            list-style-type: none;
+        }
+
+
+    .elem-legend {
+        border-radius: 1vh;
+        -moz-border-radius: 1vh;
+        -webkit-border-radius: 1vh;
+        height: 5vh;
+        width: 5vh;
+        display: inline-block;
+        padding-top: 1vh;
+    }
+
+    .elem-legend-text {
+        display: inline-block;
+        font-size: 5vh;
+        color: black;
+        font-weight: bold;
+        padding-left: 1vh;
+    }
+}
+
+@media all and (orientation:portrait) {
+
+    .chart-bar {
+        width: 100%;
+    }
+
+        .chart-bar .graphe {
+            height: 70vh;
+        }
+
+    .chart-pie {
+        clear: both;
+        width: 100%;
+    }
+
+        .chart-pie .graphe {
+            height: 35vh;
+        }
+
+    .chart-legend {
+        clear: both;
+    }
+
+        .chart-legend li {
+            list-style-type: none;
+        }
+
+
+    .elem-legend {
+        border-radius: 1vh;
+        -moz-border-radius: 1vh;
+        -webkit-border-radius: 1vh;
+        height: 5vw;
+        width: 5vw;
+        display: inline-block;
+        padding-top: 1vw;
+    }
+
+    .elem-legend-text {
+        display: inline-block;
+        font-size: 5vw;
+        color: black;
+        font-weight: bold;
+        padding-left: 1vw;
+    }
+}
+
+/*******************************/
+/*          MENU               */
+/*******************************/
+
+@media all and (orientation:landscape) {
+
+    .paragraphe-menu {
+        position: absolute;
+        top: 5vh;
+        left: 1vh;
+        bottom: 5vh;
+        width: 18vh;
+    }
+
+    .cell-menu {
+        cursor: pointer;
+        text-align: center;
+        color: #ffffff;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #000;
+        text-transform: capitalize;
+        border-width: 0 14px;
+        border-style: solid;
+        width: 18vh;
+        height: 18vh;
+        color: #000;
+        text-shadow: #fff 0px 1px 1px;
+    }
+
+    .menu-text {
+        font-size: 12vh;
+        margin-left: -4px;
+        margin-top: 2vh;
+    }
+}
+
+@media all and (orientation:portrait) {
+
+    .paragraphe-menu {
+        position: absolute;
+        top: 5vw;
+        left: 1vw;
+        bottom: 5vw;
+        width: 18vw;
+    }
+
+    .cell-menu {
+        cursor: pointer;
+        text-align: center;
+        color: #ffffff;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #000;
+        text-transform: capitalize;
+        border-width: 0 14px;
+        border-style: solid;
+        width: 18vw;
+        height: 18vw;
+        color: #000;
+        text-shadow: #fff 0px 1px 1px;
+    }
+
+    .menu-text {
+        font-size: 12vw;
+        margin-left: -4px;
+        margin-top: 2vw;
+    }
+}
+
+.cell-menu.white {
+    -webkit-border-image: url(../img/whiteButton.png) 0 14 0 14;
+    -moz-border-image: url(../img/whiteButton.png) 0 14 0 14;
+    -o-border-image: url(../img/whiteButton.png) 0 14 0 14;
+    border-image: url(../img/whiteButton.png) 0 14 0 14 fill;
+}
+
+.cell-menu.blue {
+    -webkit-border-image: url(../img/blueButton.png) 0 14 0 14;
+    -moz-border-image: url(../img/blueButton.png) 0 14 0 14;
+    -o-border-image: url(../img/blueButton.png) 0 14 0 14;
+    border-image: url(../img/blueButton.png) 0 14 0 14 fill;
+}
+
+.cell-menu.gray {
+    -webkit-border-image: url(../img/grayButton.png) 0 14 0 14;
+    -moz-border-image: url(../img/grayButton.png) 0 14 0 14;
+    -o-border-image: url(../img/grayButton.png) 0 14 0 14;
+    border-image: url(../img/grayButton.png) 0 14 0 14 fill;
+}
+
+.cell-menu.bottom {
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    left: 0px;
+}
+
+.menu-text.red {
+    color: red;
+}
+
+.menu-text.puple {
+    color: #d687ed;
+}
+
+.menu-text.white {
+    color: white;
+}
+
+.menu-text.green {
+    color: green;
+}
+
+.menu-text.black {
+    color: black;
+}
+
+.menu-text.orange {
+    color: orange;
+}
+
+.menu-text.main {
+    color: #1e6b1e;
+}
+
+/*******************************/
+/*          ACCUEIL            */
+/*******************************/
+
+@media all and (orientation:landscape) {
+
+    .fond-couleur {
+        position: absolute;
+        -webkit-animation: rotate 3s infinite;
+        -moz-animation: rotate 3s infinite;
+        -o-animation: rotate 3s infinite;
+        animation: rotate 3s infinite;
+        opacity: 0.3;
+        width: 15vh;
+        height: 15vh;
+    }
+}
+
+@media all and (orientation:portrait) {
+
+    .fond-couleur {
+        position: absolute;
+        -webkit-animation: rotate 3s infinite;
+        -moz-animation: rotate 3s infinite;
+        -o-animation: rotate 3s infinite;
+        animation: rotate 3s infinite;
+        opacity: 0.3;
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+.fond-couleur.pique {
+    background: url('../img/pique.png') no-repeat;
+    background-size: contain;
+    top: 15vh;
+    left: 15vw;
+}
+
+.fond-couleur.treffle {
+    background: url('../img/treffle.png') no-repeat;
+    background-size: contain;
+    top: 15vh;
+    right: 15vw;
+}
+
+.fond-couleur.carreau {
+    background: url('../img/carreau.png') no-repeat;
+    background-size: contain;
+    bottom: 15vh;
+    left: 15vw;
+}
+
+.fond-couleur.coeur {
+    background: url('../img/coeur.png') no-repeat;
+    background-size: contain;
+    bottom: 15vh;
+    right: 15vw;
+}
+
+.table-text-joueur {
+    color: white;
+    font-size: 4vw;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 10px 10px 5px #000;
+    text-transform: capitalize;
+}
+
+.table-icon-joueur {
+    color: red;
+    font-size: 4vw;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.table-joueur {
+    display: inline-block;
+}
+
+.pos-table-joueur1 {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    z-index: 1000;
+    max-width: 50%;
+}
+
+.pos-table-joueur2 {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    z-index: 1000;
+    max-width: 50%;
+}
+
+.pos-table-joueur3 {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    z-index: 1000;
+    max-width: 50%;
+}
+
+.pos-table-joueur4 {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    z-index: 1000;
+    max-width: 50%;
+}
+
+/*******************************/
+/*         EQUIPE         */
+/*******************************/
+
+.paragraphe-select-joueur {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media all and (orientation:landscape) {
+    .titre-equipe {
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 4px;
+        background: -webkit-linear-gradient(#00AA00,#cccccc); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#00AA00, #cccccc); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#00AA00, #cccccc); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#00AA00, #cccccc); /* Standard syntax */
+        font-size: 5vh;
+        display: inline-block;
+        color: white;
+        text-align: center;
+        font-style: italic;
+        width: 100%;
+    }
+
+    /***********REPO JOUEUR ***/
+
+    .repo-joueur {
+        font-size: 5vw;
+        font-weight: bold;
+        color: black;
+        padding-left: 1vw;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: white;
+        display: inline-block;
+    }
+
+    .icon-del-joueur {
+        font-size: 4vw;
+        font-weight: bold;
+        color: red;
+        display: inline-block;
+        float: right;
+    }
+
+    /********** EQUIPE ********/
+
+    .cell-equipe {
+        display: inline-block;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        border: solid 1px black;
+        margin-bottom: 2vh;
+        width: 45%;
+    }
+
+    .joueur-select {
+        font-size: 6vh;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+}
+
+@media all and (orientation:portrait) {
+
+    .titre-equipe {
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 4px;
+        background: -webkit-linear-gradient(#00AA00,#cccccc); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#00AA00, #cccccc); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#00AA00, #cccccc); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#00AA00, #cccccc); /* Standard syntax */
+        font-size: 5vw;
+        display: inline-block;
+        color: white;
+        text-align: center;
+        font-style: italic;
+        width: 100%;
+    }
+
+    /***********REPO JOUEUR ***/
+
+    .repo-joueur {
+        font-size: 5vh;
+        font-weight: bold;
+        color: black;
+        padding-left: 1vh;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: white;
+        display: inline-block;
+    }
+
+    .icon-del-joueur {
+        font-size: 4vh;
+        font-weight: bold;
+        color: red;
+        display: inline-block;
+    }
+
+    /********** EQUIPE ********/
+
+    .cell-equipe {
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        border: solid 1px black;
+        margin-bottom: 2vh;
+        width: 100%;
+    }
+
+    .joueur-select {
+        font-size: 5vh;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+}
+
+.liste-joueur {
+    overflow-y: auto;
+    height: 35vh;
+}
+
+
+    .liste-joueur li {
+        list-style-type: none;
+    }
+
+    .liste-joueur ul {
+        padding-left: 4px;
+        padding-right: 15px;
+    }
+
+
+.joueur-sel {
+    background: -webkit-linear-gradient(#999999,#cccccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#999999, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#999999, #cccccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#999999, #cccccc); /* Standard syntax */
+    color: black;
+}
+
+.equipe-joueur {
+    height: 20vh;
+    text-align: center;
+}
+
+.sep-joueur {
+    border-bottom: dotted 1px black;
+}
+
+/*******************************/
+/*          ENCHERE            */
+/*******************************/
+
+.paragraphe-dealer {
+}
+
+.dealer-left {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+}
+
+.dealer-right {
+    display: inline-block;
+    float: right;
+    padding-right: 10px;
+}
+
+.paragraphe-couleur {
+    text-align: center;
+    clear: both;
+}
+
+.carreau {
+    background: url('../img/carreau.png') no-repeat;
+    background-size: contain;
+}
+
+.coeur {
+    background: url('../img/coeur.png') no-repeat;
+    background-size: contain;
+}
+
+.pique {
+    background: url('../img/pique.png') no-repeat;
+    background-size: contain;
+}
+
+.treffle {
+    background: url('../img/treffle.png') no-repeat;
+    background-size: contain;
+}
+
+.paragraphe-enchere {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.couleur-carte-active {
+    /*border:solid 1px red;*/
+}
+
+@media all and (orientation:landscape) {
+
+    /******DEALER *******/
+
+    .dealer {
+        color: white;
+        font-size: 6vh;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+
+    /******COULEURS *******/
+
+    .cell-couleur {
+        width: 16vh;
+        height: 16vh;
+        display: inline-block;
+        margin-left: 3vh;
+        margin-right: 3vh;
+        background-color: white;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        border: 1vh double #999;
+    }
+
+
+
+    .img-maine {
+        margin-left: 4vh;
+        margin-top: 4vh;
+        width: 6vh;
+        height: 6vh;
+        opacity: 0.5;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .couleur-active {
+        opacity: 1.0;
+        width: 16vh;
+        height: 16vh;
+        margin-left: -1vh;
+        margin-top: -1vh;
+    }
+
+    /****** ENCHERE *******/
+
+
+    .cell-enchere-button {
+        display: inline-block;
+        width: 35vw;
+        height: 35vh;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*margin-right:10vh;
+        margin-left:10vh;*/
+    }
+
+    .img-enchere {
+        width: 12vh;
+        height: 12vh;
+        margin-left: 14vw;
+        margin-top: 2vh;
+        opacity: 0.5;
+    }
+
+    .couleur-active-enchere {
+        opacity: 1.0;
+        margin-left: 12vw;
+        margin-top: 2vh;
+        width: 20vh;
+        height: 20vh;
+    }
+
+    .montant-enchere {
+        text-align: center;
+        font-size: 12vh;
+        font-weight: bold;
+        color: black;
+        line-height: 12vh;
+    }
+
+    .equipeOff .montant-enchere {
+        color: gray;
+        font-size: 8vh;
+        font-weight: normal;
+    }
+
+    .cell-enchere-equipe {
+        display: inline-block;
+        width: 35vw;
+        /*height: 30vh;*/
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*margin-right:10vh;
+        margin-left:10vh;*/
+    }
+
+    .nom-equipe-enchere {
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 5vh;
+        color: black;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*margin-bottom: 2px;
+        margin-top: 2px;*/
+    }
+}
+
+@media all and (orientation:portrait) {
+
+    /****** DELAER *******/
+
+    .dealer {
+        color: white;
+        font-size: 8vw;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+
+    /******COULEURS *******/
+
+    .cell-couleur {
+        width: 20vw;
+        height: 15vh;
+        display: inline-block;
+        background-color: white;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        border-top: 1vh double #999;
+        border-right: 1vw double #999;
+        border-bottom: 1vh double #999;
+        border-left: 1vw double #999;
+    }
+
+    .img-maine {
+        width: 7vw;
+        height: 7vh;
+        margin-left: 6vw;
+        margin-top: 4vh;
+        opacity: 0.5;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .couleur-active {
+        opacity: 1.0;
+        width: 20vw;
+        height: 15vh;
+        margin-left: -1vw;
+        margin-top: -1vh;
+    }
+
+    /****** ENCHERE *******/
+
+    .cell-enchere-button {
+        display: inline-block;
+        width: 30vw;
+        height: 30vw;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+    }
+
+    .montant-enchere {
+        text-align: center;
+        font-size: 10vw;
+        font-weight: bold;
+        line-height: 10vw;
+    }
+
+    .img-enchere {
+        width: 12vw;
+        height: 12vw;
+        margin-left: 9vw;
+        margin-top: 1vw;
+        opacity: 0.5;
+    }
+
+    .couleur-active-enchere {
+        opacity: 1.0;
+        width: 18vw;
+        height: 18vw;
+        margin-left: 7vw;
+        margin-top: 1vw;
+    }
+
+
+    .equipeOff .montant-enchere {
+        color: gray;
+        font-size: 8vw;
+        font-weight: normal;
+    }
+
+    .cell-enchere-equipe {
+        display: inline-block;
+        width: 30vw;
+        /*height: 30vw;*/
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .nom-equipe-enchere {
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 5vw;
+        color: black;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*margin-bottom: 2px;
+        margin-top: 2px;*/
+    }
+}
+
+.equipeOff {
+    -moz-box-shadow: 0px 0px 20px 20px black;
+    -webkit-box-shadow: 0px 0px 20px 20px black;
+    box-shadow: 0 20px 20px black;
+}
+
+
+.equipeOn {
+}
+
+    .equipeOn .montant-enchere {
+        color: black;
+    }
+
+.but-enchere {
+    cursor: pointer;
+    background: -webkit-linear-gradient(#AAAAAA,#cccccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#AAAAAA, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#AAAAAA, #cccccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#AAAAAA, #cccccc); /* Standard syntax */
+}
+
+    .but-enchere.disable {
+        cursor: not-allowed;
+    }
+
+del {
+    text-decoration: none;
+    position: relative;
+}
+
+.text-contre {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 2px solid orange;
+}
+
+.text-sur-contre {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35%;
+    bottom: 35%;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.fgA {
+    color: #5bc0de;
+}
+
+.fgB {
+    color: #f0ad4e;
+}
+
+.bkA-gradient {
+    background: -webkit-linear-gradient(#5bc0de,#cccccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5bc0de, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5bc0de, #cccccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5bc0de, #cccccc); /* Standard syntax */
+}
+
+.bkB-gradient {
+    background: -webkit-linear-gradient(#f0ad4e,#cccccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f0ad4e, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f0ad4e, #cccccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f0ad4e, #cccccc); /* Standard syntax */
+}
+
+.bkA {
+    background-color: #5bc0de;
+}
+
+.bkB {
+    background-color: #f0ad4e;
+}
+
+.bkX {
+    background-color: #CCCCCC;
+}
+
+.couleur-enchere {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+/**********************************/
+/*     PARTIE                     */
+/**********************************/
+
+.paragraphe-equipe { /*height: 40%;*/
+    text-align: center;
+    clear: both;
+}
+
+.paragraphe-score {
+    text-align: center;
+}
+
+.nom-joueur {
+    text-align: center;
+}
+
+@media all and (orientation:landscape) {
+
+    .partie-equipe {
+        display: inline-block;
+        width: 35vw;
+        vertical-align: top;
+        text-align: center;
+        padding-bottom: 10px;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*border: solid 1px black;*/
+    }
+
+    .nom-equipe {
+        color: black;
+        text-decoration: none;
+        text-transform: capitalize;
+        vertical-align: top;
+        font-size: 6vh;
+        font-weight: bold;
+    }
+
+    .enchere-equipe {
+        text-align: center;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*border: solid 1px black;*/
+        background-color: white;
+        margin-left: 9vw;
+        margin-right: 9vw;
+    }
+
+    .montant-enchere-partie {
+        display: inline-block;
+        text-align: center;
+        padding-bottom: 2vh;
+        font-size: 5vh;
+        color: black;
+    }
+
+    .couleur-enchere-partie {
+        display: inline-block;
+        vertical-align: text-bottom;
+        text-align: center;
+    }
+
+    .couleur-active-partie {
+        opacity: 1.0;
+        width: 6vh;
+        height: 6vh;
+        padding-bottom: 2vh;
+    }
+
+    .cell-score {
+        display: inline-block;
+        width: 35vw;
+    }
+
+    .cell-ecart {
+        display: inline-block;
+        width: 35vw;
+    }
+
+    .points-equipe {
+        font-size: 15vh;
+        font-weight: bold;
+        color: white;
+        line-height: 23vh;
+    }
+
+    .points-ecart {
+        font-size: 10vh;
+        color: white;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*border: solid 1px black;*/
+        background-color: green;
+    }
+
+    .winner {
+        background-repeat: no-repeat;
+        background-color: yellow;
+        background-image: url('../img/laurier.png');
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        left: 28vh;
+        right: 28vh;
+        top: 20vh;
+        bottom: 20vh;
+        font-size: 7vh;
+        padding: 1vh;
+        border-radius: 3vh;
+        -moz-border-radius: 3vh;
+        -webkit-border-radius: 3vh;
+        font-weight: bold;
+        color: black;
+        vertical-align: middle;
+        opacity: 0;
+        -webkit-transition: opacity 3s;
+        -moz-transition: opacity 3s;
+        -o-transition: opacity 3s;
+        transition: opacity 3s;
+        -moz-box-shadow: 0px 0px 20px 20px black;
+        -webkit-box-shadow: 0px 0px 20px 20px black;
+        box-shadow: 0 20px 20px black;
+    }
+
+    .equipe-vainqueur {
+        padding-top: 16vh;
+    }
+}
+
+@media all and (orientation:portrait) {
+
+    .partie-equipe {
+        display: inline-block;
+        width: 30vw;
+        vertical-align: top;
+        text-align: center;
+        padding-bottom: 10px;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*border: solid 1px black;*/
+    }
+
+    .nom-equipe {
+        color: black;
+        text-decoration: none;
+        text-transform: capitalize;
+        vertical-align: top;
+        font-size: 5vw;
+    }
+
+    .enchere-equipe {
+        text-align: center;
+        border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*border: solid 1px black;*/
+        background-color: white;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .montant-enchere-partie {
+        display: inline-block;
+        text-align: center;
+        font-size: 4vw;
+        /*font-weight: bold;*/
+        color: black;
+    }
+
+    .couleur-enchere-partie {
+        display: inline-block;
+        vertical-align: text-bottom;
+        text-align: center;
+    }
+
+    .couleur-active-partie {
+        opacity: 1.0;
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .cell-score {
+        display: inline-block;
+        width: 30vw;
+    }
+
+    .cell-ecart {
+        display: inline-block;
+        width: 30vw;
+    }
+
+    .points-equipe {
+        font-size: 10vw;
+        font-weight: bold;
+        color: white;
+        line-height: 13vw;
+    }
+
+    .points-ecart {
+        font-size: 5vw;
+        color: white;
+       border-radius: 2vh;
+        -moz-border-radius: 2vh;
+        -webkit-border-radius: 2vh;
+        /*border: solid 1px black;*/
+        background-color: green;
+    }
+
+    .winner {
+        background-repeat: no-repeat;
+        background-color: yellow;
+        background-image: url('../img/laurier.png');
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        left: 18vw;
+        right: 18vw;
+        top: 42vw;
+        bottom: 42vw;
+        font-size: 7vw;
+        padding: 1vw;
+        border-radius: 3vh;
+        -moz-border-radius: 3vh;
+        -webkit-border-radius: 3vh;
+        font-weight: bold;
+        color: black;
+        vertical-align: middle;
+        opacity: 0;
+        -webkit-transition: opacity 3s;
+        -moz-transition: opacity 3s;
+        -o-transition: opacity 3s;
+        transition: opacity 3s;
+        -moz-box-shadow: 0px 0px 20px 20px black;
+        -webkit-box-shadow: 0px 0px 20px 20px black;
+        box-shadow: 0 20px 20px black;
+    }
+
+    
+    .equipe-vainqueur {
+        padding-top: 16vw;
+    }
+}
+
+.vainqueur {
+    /*display: inline-block;*/
+    text-align: center;
+}
+
+
+
+/***********************/
+/*   ROTATE  HORAIRE   */
+/***********************/
+
+@-webkit-keyframes rotate {
+
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotate {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rotate {
+    from {
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/***********************/
+/*   WINNER     */
+/***********************/
+
+@-webkit-keyframes winner {
+
+    from {
+        -webkit-transform: rotate(0deg) scale(1,1);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) scale(2,2);
+    }
+}
+
+@-moz-keyframes zoom-in {
+    from {
+        -moz-transform: rotate(0deg) scale(1,1);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) scale(3,3);
+    }
+}
+
+@-o-keyframes zoom-in {
+    from {
+        -o-transform: rotate(0deg) scale(1,1);
+    }
+
+    to {
+        -o-transform: rotate(360deg) scale(3,3);
+    }
+}
+
+@keyframes zoom-in {
+    from {
+        transform: rotate(0deg) scale(1,1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(3,3);
+    }
+}
+
+/***********************/
+/*   ROTATE  1NTI-HORAIRE */
+/***********************/
+
+@-webkit-keyframes rotate-anti {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+@-moz-keyframes rotate-anti {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(-360deg);
+    }
+}
+
+@-o-keyframes rotate-anti {
+    from {
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotate-anti {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/***********************/
+/*   alt-score */
+/***********************/
+
+@-webkit-keyframes alt-score {
+    from,to  { -webkit-transform: rotateZ(0deg); }
+    40%      { -webkit-transform: rotateZ(0deg);  }
+    50%      { -webkit-transform: rotateZ(180deg);}
+    90%      { -webkit-transform: rotateZ(180deg);}
+    100%     { -webkit-transform: rotateZ(0deg); }
+}
+
+@-moz-keyframes alt-score {
+    
+    from,to  { -moz-transform: rotateZ(0deg); }
+    40%      { -moz-transform: rotateZ(0deg);  }
+    50%      { -moz-transform: rotateZ(180deg);}
+    90%      { -moz-transform: rotateZ(180deg);}
+    100%     { -moz-transform: rotateZ(0deg); }
+}
+
+@-o-keyframes alt-score {
+    
+    from,to  { -o-transform: rotateZ(0deg); }
+    40%      { -o-transform: rotateZ(0deg);  }
+    50%      { -o-transform: rotateZ(180deg);}
+    90%      { -o-transform: rotateZ(180deg);}
+    100%     { -o-transform: rotateZ(0deg); }
+
+}
+
+@keyframes alt-score {
+   from,to  { -transform: rotateZ(0deg); }
+    40%      { -transform: rotateZ(0deg);  }
+    50%      { -transform: rotateZ(180deg);}
+    90%      { -transform: rotateZ(180deg);}
+    100%     { -transform: rotateZ(0deg); }
+}

@@ -1,0 +1,39 @@
+﻿<div class="fond tapis">
+
+    <div class="pos-table-joueur1">
+        <span ng-show="partie.dealer == 1" class="table-icon-joueur table-joueur glyphicon glyphicon-hand-right"></span>
+        <joueur class="table-joueur" nom="partie.equipeA.joueur1" on-select="setDealer(1)" />
+    </div>
+    <div class="pos-table-joueur2">
+        <span ng-show="partie.dealer == 2" class="table-icon-joueur table-joueur glyphicon glyphicon-hand-right"></span>
+        <joueur class="table-joueur" nom="partie.equipeB.joueur1" on-select="setDealer(2)" />
+    </div>
+    <div class="pos-table-joueur3">
+        <span ng-show="partie.dealer == 3" class="table-icon-joueur table-joueur glyphicon glyphicon-hand-right"></span>
+        <joueur class="table-joueur" nom="partie.equipeA.joueur2" on-select="setDealer(3)" />
+    </div>
+    <div class="pos-table-joueur4">
+        <span ng-show="partie.dealer == 4" class="table-icon-joueur table-joueur glyphicon glyphicon-hand-right"></span>
+        <joueur class="table-joueur" nom="partie.equipeB.joueur2" on-select="setDealer(4)" />
+    </div>
+
+    <div class="fond-couleur pique " />
+    <div class="fond-couleur coeur " />
+    <div class="fond-couleur carreau " />
+    <div class="fond-couleur treffle " />
+</div>
+
+<div class="paragraphe-menu">
+    <div class="cell-menu white">
+        <a ng-click="param()"><span class="menu-text black glyphicon glyphicon-cog"></span></a>
+    </div>
+    <div class="cell-menu white">
+        <a ng-click="raz()"><span class="menu-text black glyphicon glyphicon-refresh"></span></a>
+    </div>
+    <div class="cell-menu white">
+        <a ng-click="modif()"><span class="menu-text black glyphicon glyphicon-user"></span></a>
+    </div>
+    <div ng-show="isPartieComplete() == true" class="cell-menu white bottom">
+        <a ng-click="start()"><span class="menu-text main glyphicon glyphicon-circle-arrow-right"></span></a>
+    </div>
+</div>

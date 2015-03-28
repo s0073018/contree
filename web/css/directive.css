@@ -1,0 +1,62 @@
+﻿
+
+/*Check*/
+
+.divCheck {
+    
+    -webkit-transition: width 1s ease;
+    -moz-transition: width 1s ease;
+    -o-transition: width 1s ease;
+    -ms-transition: width 1s ease;
+    transition: width 1s ease;
+} 
+
+.divCheckOn i {
+     -moz-transition:all 0.5s ease;
+    -webkit-transition:all 0.5s ease;
+    -o-transition:all 0.5s ease;
+    -ms-transition:all 0.5s ease;
+    transition:all 0.5s ease; 
+}
+
+.divCheckOff i {
+    -moz-transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+    -o-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+    transform:rotateY(180deg);
+    -moz-transition:all 0.5s ease;
+    -webkit-transition:all 0.5s ease;
+    -o-transition:all 0.5s ease;
+    -ms-transition:all 0.5s ease;
+    transition:all 0.5s ease;
+
+}
+
+.checkBoxCase {
+    font-size: 20px;
+    color: gray;
+}
+
+.checkboxTexte {
+    vertical-align: text-bottom;
+}
+
+.checkBoxCaseRotate {
+    font-size: 20px;
+    color: black;
+}
+
+.checkboxTexteRotate {
+    vertical-align: text-bottom;
+    color: black;
+}
+
+
+
+.checkboxButton {
+    border: 0;
+    background: none;
+    padding:1px 4px 0px 4px;
+    
+}

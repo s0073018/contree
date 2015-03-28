@@ -1,0 +1,124 @@
+﻿<div class="fond tapis">
+
+    <div class="paragraphe-dealer">
+        <div class="dealer">
+            <div class="dealer-left">
+                <span ng-show="dealer.equipeDealer == C.EQUIPE_A">
+                    <span ng-class="{'fgA':dealer.equipeDealer == C.EQUIPE_A,'fgB':dealer.equipeDealer == C.EQUIPE_B}" class=" glyphicon glyphicon-hand-right"></span>
+                    <span>{{dealer.nomDealer}}</span>
+                </span>
+            </div>
+            <div class="dealer-right">
+                <span ng-show="dealer.equipeDealer == C.EQUIPE_B">
+                    <span ng-class="{'fgA':dealer.equipeDealer == C.EQUIPE_A,'fgB':dealer.equipeDealer == C.EQUIPE_B}" class=" glyphicon glyphicon-hand-right"></span>
+                    <span>{{dealer.nomDealer}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="paragraphe-equipe">
+        <div class="partie-equipe bkA-gradient">
+            <div class="nom-equipe">
+                <div class="nom-joueur">{{partie.equipeA.joueur1}}</div>
+                <div class="nom-joueur">{{partie.equipeA.joueur2}}</div>
+                <div class="enchere-equipe" ng-show="partie.maine.equipeContrat == C.EQUIPE_A">
+                    <div class="montant-enchere-partie">
+                        <del>{{getLibelleContrat(C.EQUIPE_A)}}<span ng-class="getClasseNameContre(C.EQUIPE_A)"></span></del>
+                    </div>
+                    <div class="couleur-enchere-partie">
+                        <div ng-class="getClasseNameCouleur(C.EQUIPE_A)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="partie-equipe bkB-gradient">
+            <div class="nom-equipe">
+                <div class="nom-joueur">{{partie.equipeB.joueur1}}</div>
+                <div class="nom-joueur">{{partie.equipeB.joueur2}}</div>
+                <div class="enchere-equipe" ng-show="partie.maine.equipeContrat == C.EQUIPE_B">
+                    <div class="montant-enchere-partie">
+                        <del>{{getLibelleContrat(C.EQUIPE_B)}}<span ng-class="getClasseNameContre(C.EQUIPE_B)"></span></del>
+                    </div>
+                    <div class="couleur-enchere-partie">
+                        <div ng-class="getClasseNameCouleur(C.EQUIPE_B)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="paragraphe-score">
+        <div>
+            <div class="cell-score">
+                <div class="points-equipe">
+                    {{partie.equipeA.score}}
+                </div>
+            </div>
+            <div class="cell-score">
+                <div class="points-equipe">
+                    {{partie.equipeB.score}}
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="cell-ecart">
+                <div class="points-ecart" ng-show="partie.equipeA.score > partie.equipeB.score">
+                    +{{partie.equipeA.score-partie.equipeB.score}}
+                </div>
+            </div>
+            <div class="cell-ecart">
+                <div class="points-ecart" ng-show="partie.equipeB.score > partie.equipeA.score">
+                    +{{partie.equipeB.score-partie.equipeA.score}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="paragraphe-menu">
+    <div ng-show="(partie.maine.flagCalcul == false && partie.flagWinnerA == false && partie.flagWinnerB == false)" class="cell-menu white">
+        <a ng-click="contratOK()"><span class="menu-text green glyphicon glyphicon-thumbs-up"></span></a>
+    </div>
+    <div ng-show="partie.maine.flagCalcul == false && partie.flagWinnerA == false && partie.flagWinnerB == false" class="cell-menu white">
+        <a ng-click="contratKO()"><span class="menu-text red glyphicon glyphicon-thumbs-down"></span></a>
+    </div>
+    <div class="cell-menu white" ng-show="partie.historiquePartie.length > 0">
+        <a ng-click="annul()"><span class="menu-text black glyphicon glyphicon glyphicon-fast-backward"></span></a>
+    </div>
+    <div class="cell-menu white">
+        <a ng-click="stat()"><span class="menu-text black glyphicon glyphicon glyphicon-stats"></span></a>
+    </div>
+    <div class="cell-menu white  bottom">
+        <a ng-click="retourEnchere()"><span class="menu-text main glyphicon glyphicon-circle-arrow-left"></span></a>
+    </div>
+</div>
+
+<div id="winnerA" class="winner">
+    <div class="equipe-vainqueur">
+        <div>
+            <div class="vainqueur">{{partie.equipeA.joueur1}}</div>
+        </div>
+        <div>
+            <div class="vainqueur">{{partie.equipeA.joueur2}}</div>
+        </div>
+        <div ng-show="param.email != ''">
+            <div class="vainqueur" ng-click="sendMail()"><span class="glyphicon glyphicon-envelope" ng-click="sendMail()"></span></div>
+        </div>
+    </div>
+</div>
+
+<div id="winnerB" class="winner">
+    <div class="equipe-vainqueur">
+        <div>
+            <div class="vainqueur">{{partie.equipeB.joueur1}}</div>
+        </div>
+        <div>
+            <div class="vainqueur">{{partie.equipeB.joueur2}}</div>
+        </div>
+        <div>
+            <div class="vainqueur" ng-click="sendMail()"><span class="glyphicon glyphicon-envelope" ng-click="sendMail()"></span></div>
+        </div>
+    </div>
+</div>

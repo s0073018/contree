@@ -1,0 +1,43 @@
+﻿<div class="fond tapis">
+    <div class="paragraphe-select-joueur">
+        <div class="titre-equipe">
+            Joueurs ({{listeJoueur.length}})
+        </div>
+        <div class="liste-joueur">
+            <ul>
+                <li ng-repeat="j in listeJoueur | orderBy:'nom'">
+                    <div>
+                        <div class="repo-joueur" ng-click="selectJoueur(j)" ng-class="{'joueur-sel':joueurSel == j}">{{j.nom}}</div>
+                        <div class="icon-del-joueur glyphicon glyphicon-remove" ng-click="removeJoueur(j)"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="titre-equipe">
+            Equipes
+        </div>
+        <div class="equipe-joueur">
+            <div class="cell-equipe bkA-gradient">
+                <div ng-click="addEquipe(C.EQUIPE_A,1)" class=" joueur-select sep-joueur">{{partie.equipeA.joueur1}}</div>
+                <div ng-click="addEquipe(C.EQUIPE_A,2)" class=" joueur-select">{{partie.equipeA.joueur2}}</div>
+            </div>
+            <div class="cell-equipe bkB-gradient">
+                <div ng-click="addEquipe(C.EQUIPE_B,1)" class=" joueur-select sep-joueur">{{partie.equipeB.joueur1}}</div>
+                <div ng-click="addEquipe(C.EQUIPE_B,2)" class=" joueur-select">{{partie.equipeB.joueur2}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="paragraphe-menu">
+    <div class="cell-menu white">
+        <a ng-click="ok()"><span class="menu-text green glyphicon glyphicon-ok"></span></a>
+    </div>
+    <div class="cell-menu white">
+        <a ng-click="cancel()"><span class="menu-text red glyphicon glyphicon-remove"></span></a>
+    </div>
+    <div class="cell-menu white">
+        <a ng-click="addNom()"><span class="menu-text black glyphicon glyphicon-plus"></span></a>
+    </div>
+</div>
+

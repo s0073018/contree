@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html ng-app="contreeApp">
+<head>
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0 maximum-scale=1.0">
+    <!--<meta name="viewport" content="width=device-height,height=device-width,user-scalable=no, initial-scale=1.0 maximum-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Contrée</title>
+    
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="lib/css/jquery-ui.css">
+    <link rel="stylesheet" href="css/contree.css" type="text/css" />
+    <link rel="stylesheet" href="css/directive.css" type="text/css" />
+    <link rel="stylesheet" href="css/dnd.css" type="text/css" />
+
+</head>
+
+<body ng-controller="MainController">
+    <div class="aide"><a ng-click="aide()"><span class=" badge">?</span></a></div>
+    <div class="panel-aide" ng-include="aideUrl"></div>
+    <div class="panel-score-tempo" ng-include="scoreTempoUrl"></div>
+    <div ng-view >
+    </div>
+
+    <script src="lib/js/jquery-2.1.0.js" type="text/javascript"></script>
+    <script src="lib/js/jquery-ui.js" type="text/javascript"></script>
+
+
+    <script src="lib/js/angular.min.121.js" type="text/javascript"></script>
+    <script src="lib/js/angular-route.min.js" type="text/javascript"></script>
+    
+    <script src="lib/js/ui-bootstrap-tpls-0.10.0.min.js" type="text/javascript"></script>
+    <script src="lib/js/bootstrap.min.js" type="text/javascript"></script>
+    
+    <script src="lib/js/d3.js" type="text/javascript"></script>
+    <script src="lib/js/angular-charts.js" type="text/javascript"></script>
+    <script src="lib/js/idle.js" type="text/javascript"></script>
+
+    <script src="js/App/Modules.js" type="text/javascript"></script>
+    <script src="js/App/contreeApp.js" type="text/javascript"></script>
+    <script src="js/App/Constantes.js" type="text/javascript"></script>
+
+    <script src="js/Controllers/MainController.js" type="text/javascript"></script>
+    <script src="js/Controllers/PopupController.js" type="text/javascript"></script>
+    <script src="js/Controllers/AccueilController.js" type="text/javascript"></script>
+    <script src="js/Controllers/EnchereController.js" type="text/javascript"></script>
+    <script src="js/Controllers/PartieController.js" type="text/javascript"></script>
+    <script src="js/Controllers/EquipeController.js" type="text/javascript"></script>
+    <script src="js/Controllers/StatController.js" type="text/javascript"></script>
+    <script src="js/Controllers/ScoreTempoController.js" type="text/javascript"></script>
+    <script src="js/Controllers/ParamController.js" type="text/javascript"></script>
+
+    <script src="js/Services/ToolsService.js" type="text/javascript"></script>
+    <script src="js/Services/ParamService.js" type="text/javascript"></script>
+    <script src="js/Services/PersistService.js" type="text/javascript"></script>
+    <script src="js/Services/JoueurService.js" type="text/javascript"></script>
+    <script src="js/Services/PartieService.js" type="text/javascript"></script>
+
+    <script src="js/Directives/Blur.js" type="text/javascript"></script>
+    <script src="js/Directives/Focus.js" type="text/javascript"></script>
+    <script src="js/Directives/PreventDefault.js" type="text/javascript"></script>
+    <script src="js/Directives/check.js" type="text/javascript"></script>
+    <script src="js/Directives/autoComplete.js" type="text/javascript"></script>
+    <script src="js/Directives/Joueur.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>

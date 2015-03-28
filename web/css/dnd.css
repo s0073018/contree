@@ -1,0 +1,26 @@
+﻿
+.on-drag-enter{
+    */background-color : red;*/
+}
+
+.on-drag-hover {
+  /*content: 'Drop him gently';
+  display: block;
+  color: white;
+  font-size: x-large;
+  font-weight: 800;*/
+  
+   border-radius: 3px;
+   -moz-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   background-color:lightgray;
+}
+
+.on-drag-hover:before {
+  /*content: 'Drop him gently';
+  display: block;
+  color: white;
+  font-size: x-large;
+  font-weight: 800;*/
+ 
+}

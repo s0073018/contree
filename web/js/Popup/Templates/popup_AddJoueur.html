@@ -1,0 +1,14 @@
+﻿    <div class="modal-header">
+          <b>Ajout d'un joueur</b>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" id="nom" placeholder="Nom du joueur ..." ng-model="joueur.nom">
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="nom == ''" class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Annul</button>
+    </div>

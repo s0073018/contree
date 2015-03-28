@@ -1,0 +1,90 @@
+﻿<div class="fond tapis">
+    <div class="paragraphe-dealer">
+        <div class="dealer">
+            <div class="dealer-left">
+                <span ng-show="dealer.equipeDealer == C.EQUIPE_A">
+                    <span ng-class="{'fgA':dealer.equipeDealer == C.EQUIPE_A,'fgB':dealer.equipeDealer == C.EQUIPE_B}" class=" glyphicon glyphicon-hand-right"></span>
+                    <span>{{dealer.nomDealer}}</span>
+                </span>
+                <span ng-show="dealer.equipeDealer == C.EQUIPE_B">
+                    <a ng-click="showScoreTempo(true)"><span class="dealer glyphicon glyphicon-star"></span></a>
+                </span>
+            </div>
+            <div class="dealer-right">
+                <span ng-show="dealer.equipeDealer == C.EQUIPE_B">
+                    <span ng-class="{'fgA':dealer.equipeDealer == C.EQUIPE_A,'fgB':dealer.equipeDealer == C.EQUIPE_B}" class=" glyphicon glyphicon-hand-right"></span>
+                    <span>{{dealer.nomDealer}}</span>
+                </span>
+                <span ng-show="dealer.equipeDealer == C.EQUIPE_A">
+                    <a ng-click="showScoreTempo(true)"><span class="dealer glyphicon glyphicon-star"></span></a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class=" paragraphe-couleur ">
+        <div class="cell-couleur" ng-click="setCouleur(C.COULEUR_COEUR)" ng-class="{'couleur-carte-active':currentCouleur == C.COULEUR_COEUR}">
+            <div ng-disabled="isDisable('Couleur')" ng-class="{'couleur-active':currentCouleur == C.COULEUR_COEUR}" class="img-maine coeur " />
+        </div>
+        <div class="cell-couleur" ng-click="setCouleur(C.COULEUR_PIQUE)" ng-class="{'couleur-carte-active':currentCouleur == C.COULEUR_PIQUE}">
+            <div ng-disabled="isDisable('Couleur')" ng-class="{'couleur-active':currentCouleur == C.COULEUR_PIQUE}" class="img-maine pique " />
+        </div>
+        <div class="cell-couleur" ng-click="setCouleur(C.COULEUR_CARREAU)" ng-class="{'couleur-carte-active':currentCouleur == C.COULEUR_CARREAU}">
+            <div ng-disabled="isDisable('Couleur')" ng-class="{'couleur-active':currentCouleur == C.COULEUR_CARREAU}" class="img-maine carreau " />
+        </div>
+        <div class="cell-couleur" ng-click="setCouleur(C.COULEUR_TREFFLE)" ng-class="{'couleur-carte-active':currentCouleur == C.COULEUR_TREFFLE}">
+            <div ng-disabled="isDisable('Couleur')" ng-class="{'couleur-active':currentCouleur == C.COULEUR_TREFFLE}" class="img-maine treffle " />
+        </div>
+
+    </div>
+
+    <div class="paragraphe-enchere">
+        <div class="cell-enchere-button" ng-class="getClasseNameEnchere(C.EQUIPE_A)" ng-click="avanceEnchere('avanceContratA',C.EQUIPE_A)">
+            <div class="montant-enchere">
+                <del>{{getLibelleContrat(C.EQUIPE_A)}}<span ng-class="getClasseNameContre(C.EQUIPE_A)"></span></del>
+            </div>
+            <div ng-class="getClasseNameCouleur(C.EQUIPE_A)" />
+        </div>
+        <div class="cell-enchere-button" ng-class="getClasseNameEnchere(C.EQUIPE_B)" ng-click="avanceEnchere('avanceContratB',C.EQUIPE_B)">
+            <div class="montant-enchere">
+                <del>{{getLibelleContrat(C.EQUIPE_B)}}<span ng-class="getClasseNameContre(C.EQUIPE_B)"></span></del>
+            </div>
+            <div ng-class="getClasseNameCouleur(C.EQUIPE_B)" />
+        </div>
+    </div>
+    <div class="paragraphe-enchere">
+        <div class="cell-enchere-equipe">
+            <div class="nom-equipe-enchere" ng-class="getClasseNameNomEquipeEnchere(C.EQUIPE_A)" ng-click="avanceEnchere('avanceContratA',C.EQUIPE_A)">
+                <div>{{partie.equipeA.joueur1}} & {{partie.equipeA.joueur2}}</div>
+                <div style="font-weight:bolder;font-size:2em;">{{partie.equipeA.score}}</div>
+            </div>
+        </div>
+        <div class="cell-enchere-equipe">
+            <div class="nom-equipe-enchere" ng-class="getClasseNameNomEquipeEnchere(C.EQUIPE_B)" ng-click="avanceEnchere('avanceContratB',C.EQUIPE_B)">
+                <div>{{partie.equipeB.joueur1}} & {{partie.equipeB.joueur2}}</div>
+                <div style="font-weight:bolder;font-size:2em;">{{partie.equipeB.score}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="paragraphe-menu">
+    <div class="cell-menu white">
+        <a ng-show="!isDisable('Start')" ng-click="start()"><span class="menu-text main glyphicon glyphicon-ok"></span></a>
+        <a ng-show="isDisable('Start')" ng-click="passe()"><span class="menu-text main glyphicon glyphicon-pause"></span></a>
+    </div>
+    <div class="cell-menu white" ng-show="!isDisable('retourEnchere')">
+        <a ng-click="retourEnchere()"><span class="menu-text red glyphicon glyphicon-remove"></span></a>
+    </div>
+    <div class="cell-menu white" ng-show="((partie.historiqueMaine.length > 1) && (partie.maine.flagSurContre == false))">
+        <a ng-show="((partie.maine.flagContre == false) && (partie.historiqueMaine.length > 1))" ng-click="contre()"><span class="menu-text orange glyphicon glyphicon-flash"></span></a>
+        <a ng-show="((partie.maine.flagContre == true) && (partie.maine.flagSurContre == false))" ng-click="contre()"><span class="menu-text red glyphicon glyphicon-flash"></span></a>
+    </div>
+    <div class="cell-menu white bottom">
+        <a ng-click="retour()"><span class="menu-text main glyphicon glyphicon-circle-arrow-left"></span></a>
+    </div>
+
+</div>
+
+

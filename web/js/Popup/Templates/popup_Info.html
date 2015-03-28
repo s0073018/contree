@@ -1,0 +1,21 @@
+﻿    <div class="modal-header">
+          <b>{{titre}}</b>
+    </div>
+    <div class="modal-body">
+        <table width="100%">
+            <tr>
+                <td valign="middle" align="center">
+                    <img ng-show="type == 'I'" src="img/popup_info.png" lazy-src />
+                    <img ng-show="type == 'E'" src="img/popup_error.png" lazy-src />
+                    <img ng-show="type == 'W'" src="img/popup_warning.png" lazy-src />
+                    <img ng-show="type == 'C'" src="img/popup_comment.png" lazy-src />
+                </td>
+                <td valign="middle" align="left">
+                    <div ng-repeat="s in message track by $index">{{s}}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+    </div>

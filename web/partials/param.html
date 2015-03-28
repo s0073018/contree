@@ -1,0 +1,28 @@
+﻿<div class="fond param">
+    <div class="paragraphe-param">
+        <div class="form-group">
+            <label for="delai">Délai attente avant affichage ecran score (en s)</label>
+            <input type="number" class="form-control" id="delai" placeholder="Entrez une valeur en secondes" focus-me="{{true}}" ng-model="param.delai">
+        </div>
+        <div class="form-group">
+            <label for="mail">Adresse mail</label>
+            <input type="email" class="form-control" id="mail" placeholder="Entrez une adresse mail" ng-model="param.email">
+        </div>
+        <div class="form-group">
+            <label for="score">Score gagnant</label>
+            <input type="number" class="form-control" id="score" placeholder="Entrez une valeur" ng-model="param.score">
+        </div>
+        <div class="form-group">
+            <check val="param.rotate" texte="Rotation score" css-check="checkBoxCaseRotate" css-texte="checkboxTexteRotate"></check>
+        </div>
+    </div>
+</div>
+
+<div class="paragraphe-menu">
+    <div class="cell-menu white">
+        <a ng-click="ok()"><span class="menu-text green glyphicon glyphicon-ok"></span></a>
+    </div>
+    <div class="cell-menu white">
+        <a ng-click="cancel()"><span class="menu-text red glyphicon glyphicon-remove"></span></a>
+    </div>
+</div>

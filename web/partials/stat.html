@@ -1,0 +1,46 @@
+﻿<div class="fond stat">
+
+    <div ng-show="chartType == 'bar'">
+        <div class="chart-bar">
+            <div ac-chart="chartType" ac-data="tabData" score="{{param.score}}" ac-config="configBar" class='barAB graphe'>
+
+            </div>
+        </div>
+    </div>
+    <div ng-show="chartType == 'pie'">
+        <div class="chart-pie">
+            <div ac-chart="chartType" ac-data="tabDataA" ac-config="configPieA" class='graphe'>
+
+            </div>
+        </div>
+        <div class="chart-pie">
+            <div ac-chart="chartType" ac-data="tabDataB" ac-config="configPieB" class='graphe'>
+
+            </div>
+        </div>
+    </div>
+    <div class="chart-legend" ng-show="chartType == 'bar'">
+        <ul>
+            <li ng-repeat="l in legendBar">
+                <div class="elem-legend" ng-class="l.bk"></div>
+                <div class="elem-legend-text">{{l.text}}</div>
+            </li>
+        </ul>
+    </div>
+    <div class="chart-legend" ng-show="chartType == 'pie'">
+        <ul>
+            <li ng-repeat="l in legendPie">
+                <div class="elem-legend" style='background-color:{{l.color}};'></div><div class="elem-legend-text">{{l.text}}</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="paragraphe-menu">
+    <div class="cell-menu white">
+        <a ng-show="chartType == 'bar'" ng-click="chartType='pie'"><span class="menu-text black glyphicon glyphicon-adjust"></span></a>
+        <a ng-show="chartType == 'pie'" ng-click="chartType='bar'"><span class="menu-text black glyphicon glyphicon-stats"></span></a>
+    </div>
+    <div class="cell-menu white  bottom">
+        <a ng-click="retourPartie()"><span class="menu-text main glyphicon glyphicon-circle-arrow-left"></span></a>
+    </div>
+</div>
